@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{fancyhdr}
 \usepackage{datetime}
+\usepackage{enumitem}
 %\usepackage{showframe}
 
 %custom variables
@@ -38,20 +39,74 @@
 \section{Textbook Problems}
 Problems from the book
 
-\paragraph{P.4}                                                                                                                                          
-Solution:                                                                                                                                                       
-\paragraph{P.6}                                                                                                                                                      
-Solution:                                                                                                                                                            
-\paragraph{P.8}                                                                                                                                                      
-Solution:                                                                                                                                                            
-\paragraph{P.13}                                                                                                                                                     
-Solution:                                                                                                                                                            
-\paragraph{P.21}                                                                                                                                                     
-Solution:                                                                                                                                                            
-\paragraph{P.22}                                                                                                                                                     
-Solution:                                                                                                                                                            
-\paragraph{P.23}                                                                                                                                                     
-Solution:                                                                                                                                                            
+\paragraph{P.4\\}
+\textbf{Solution:}
+\begin{enumerate}[label= \alph*)]
+\item 16 maximum possible connections given that the switches are able to support atleast 4 hosts each.
+\item 8
+\item Yes, for any given link, allow two circuits to be reserved for the AC connectionsn \& two for BD connections. Thus, becuse there are only 2 paths for each connectin, there will be 4 total circuits reserved for both AC \& BD connections.
+\item From parts a \& b, m is simply $frac{Ls}{R}$.
+\end{enumerate}                          
+
+                                                                                                                                                                                                                                   
+\paragraph{P.6\\}                                                                                                                                                      
+\textbf{Solution:}
+\begin{enumerate}[label = \alph*)]
+\item $d_{prop} = m/s.$
+\item $d_{trans} = L/R.$
+\item $d_{total} = frac{L}{R} + frac{m}{s}.$
+\item It is just about to leave A.
+\item Some where on the link.
+\item Already arrived at B.
+\item given L = 120 b, R = 56 Kbps, and s = $2.5\cdot10^8 m/s$, from part a \& b it is obvious that $m = Ls/R$. So,\\
+$$m = \frac{Ls}{R} = \frac{120 bits\cdot2.5\cdot10^8 m/s}{56\cdot10^3 bps}= $$\\
+$$5.357\cdot10^5 m = 535.7\cdot km = 540 km (2 s.f.).$$
+\end{enumerate}                
+
+                                                                                                                                         
+\paragraph{P.8\\}                                                                                                                                                      
+\textbf{Solution:}
+\begin{enumerate}[label = \alph*)]
+\item 3Mbs/150Kbps = 20 total connections at maximum.
+\item 0.1 or 10\%.
+\item Let $X(120, 0.1)$ be a binomal random variable representing the number of users transmiting, then the chance there are n users transmitting is,\\
+$$P[X = n] = {120 \choose n}0.1^n0.9^{120-n}.$$
+\item From the above equation, $P[X=21] = 0.00414$ (3 s.f.).
+\end{enumerate}
+
+                                                                                                                                              
+\paragraph{P.13\\}                                                                                                                                                     
+\textbf{Solution:}
+\begin{enumerate}[label = \alph*)]
+\item The first packet will ahve no queueing delay, the second will wait L/R, the third 2L/R, the fourth 3L/R, and so on and so forth. Let $\mu_q$ be  the average queue delay per packet. So,\\
+$$\mu_q = \frac{1}{N}\sum_{i = 1}^{N-1}\frac{iL}{R} =\frac{L}{NR}\frac{(N-1)N}{2} = \frac{L(N-1)}{2R}. $$
+\item If N packets arrive simultaneously at the link, it would take $\frac{LN(N+1)}{2R}$ sec to disperse. This is vastly larger than the interval at which such N such packets arrive, $\frac{LN}{R}$. Thus, the queue would fill up and packets would be lost. If the queue is infinite, then the average queue time would go to infinity. If the queue size could fit $Q$ packets, then the average wait time would be $\frac{L(Q-1)}{2R}$, and the packets that didn't make it to the queue would be lost.
+\end{enumerate}
+
+
+\paragraph{P.21\\}                                                                                                                                                
+\textbf{Solution:}
+If only one path able to be used, then the maximum throughput would be $min\{ R^k_1, R^k_2,...,R^k_N\}$, or the mininum rate out of all the links on the given path, $k$.\\If all the paths are usable, then the maximum through put the largest minimum link out of all the paths, or $min\{\ min\{R^1_1, R^2_2,...\}, min\{R^2_1, R^2_2,...\},...,min\{R^M_1, R^M_2,...R^M_N\}\ \}$. 
+
+
+\paragraph{P.22\\}                                                                                                                                                     
+\textbf{Solution:}
+\begin{enumerate}[label = \alph*)]
+\item $P[ \ packet\ received\  ] = 1 - p$.
+\item $n$, average number of re-transmitts, $ = 1/p$.
+\end{enumerate}
+
+                                                                                                          
+\paragraph{P.23\\}                                                                                                                                                     
+\textbf{Solution:}
+\begin{enumerate}[label = \alph*) ]
+\item The time between the arrival of the last bit of the first packet and that of the second, is the time it takes for the the second packet to arrrive wholly at the destination or the transmission time, $t_{xmit} = L/R_s$. 
+\item Yes, as $R_C<R_S$, the first packet would have to slow down, so that the second packet would begin to approach the first. In order have the minimal T, the first packet must completely pass through the queue by the time the second packet arrives at the link. So,\\
+$$t_{prop} + t_{xmit} + t_{queue} = T + t_{prop} + t_{xmit}$$
+$$T = t_{queue} = \frac{L}{R_C}$$
+\end{enumerate}
+
+                                                                                                                                             
 \paragraph{P.25}                                                                                                                                                     
 Solution:                                                                                                                                                            
 \paragraph{P.33}                                                                                                                                                     

@@ -2,6 +2,9 @@
 \usepackage{fancyhdr}
 \usepackage{datetime}
 \usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
 %\usepackage{showframe}
 
 %custom variables
@@ -102,20 +105,88 @@ If only one path able to be used, then the maximum throughput would be $min\{ R^
 \begin{enumerate}[label = \alph*) ]
 \item The time between the arrival of the last bit of the first packet and that of the second, is the time it takes for the the second packet to arrrive wholly at the destination or the transmission time, $t_{xmit} = L/R_s$. 
 \item Yes, as $R_C<R_S$, the first packet would have to slow down, so that the second packet would begin to approach the first. In order have the minimal T, the first packet must completely pass through the queue by the time the second packet arrives at the link. So,\\
+\
 $$t_{prop} + t_{xmit} + t_{queue} = T + t_{prop} + t_{xmit}$$
 $$T = t_{queue} = \frac{L}{R_C}$$
 \end{enumerate}
 
                                                                                                                                              
-\paragraph{P.25}                                                                                                                                                     
-Solution:                                                                                                                                                            
-\paragraph{P.33}                                                                                                                                                     
-Solution:
+\paragraph{P.25\\}                                                                                                                                                     
+\textbf{Solution:}
+\begin{enumerate}[label = \alph*)]
+\item The bandwidth-delay product,\\
+$$R\cdot d_{prop} = 2Mbps \cdot \frac{ 20,000 km }{ 2.5\cdot 10^8 meters/sec } = \frac{4}{2.5\cdot 10 } Mb$$
+$$= 0.16\ Mb = 160\ Kb.$$
+\item 160 Kb.
+\item The bandwidth-delay product is a measure of how many bits can fill the link.
+\item $w_b$, the width of a bit would be $20,000km/160Kb = 125 m$. The width of a football is 109.1 meters long in comparison, which is to say, a bit on this link is longer than a football field.
+\item $w_b$, the width of a bit can be defined as,\\
+$$w_b = \frac{m}{R\cdot \frac{m}{S} } = \frac{s}{R}$$
+\end{enumerate}
+
+                                                                                                                                            
+\paragraph{P.33\\}                                                                                                                                                     
+\textbf{Solution:}
+The transmission time for any packet in this scenario, $t_{xmit} = \frac{S + 80}{R}$. The first packet will take $3t_{xmit}$ to arrive at the destination, B. Afterwards the rest of the packets, of which there are $\frac{F}{S}-1$, will regularly arrive at intervals of $t_{xmit}$. So the rest of the packets will take $(\frac{F}{S} - 1 )t_{xmit}$. So, total transmission delay will be,\\
+$$t_T = 3t_{xmit} + \Bigg(\frac{F}{S} - 1\Bigg )t_{xmit}$$
+$$=\Bigg(\frac{F}{S} + 2\Bigg)t_{xmit}$$
+$$=\Bigg(\frac{F}{S} + 2\Bigg)\frac{S + 80}{R}$$
+Then to minimize $t_T$, we take the derivated with respect S and solve for S.First, expanding $t_T$.\\
+$$\frac{dt_T}{dS} = \frac{d}{dS}\Bigg( \frac{F}{R} + \frac{80F}{SR} + \frac{2S}{R} + \frac{160}{R}\Bigg )$$
+$$ = \frac{-80F}{RS^2} + \frac{2}{R}.$$.
+This minimum S is achieved when $\frac{dt_T}{dS}$ is zero. \\
+$$ 0 = \frac{-80F}{RS^2} + \frac{2}{R}$$
+$$\frac{2}{R} = \frac{-80F}{RS^2}$$
+$$S^2 =40F \Rightarrow S = \sqrt{40F}.$$
+Thus the minimal transmission delay is when the packets are of size $\sqrt{40F}$.
+
 
 \section{Additional Questions}
-Extra Questions here
 
-\paragraph{Additonal Question 1}
-Description of the first addition Question
+\paragraph{Additonal Question 1\\}
+\textbf{Part I, Solution: }
+\begin{enumerate}
+\item Link 1,\\
+$$t_{l1} = t_{prop1} + t_{xmit1} = 1ms + \frac{10^4}{10^6}sec = 11ms.$$\\
+Link 2,\\
+$$t_{l2} = t_{prop2} + t_{xmit2} = 2ms + \frac{10^4}{2\cdot 10^6}sec = 7ms.$$\\
+So, in total, there will be $t_{l1} + t_{l2} = 18ms$ of delay.
+\item If ten equal sized packets were used instead then,\\
+$$l_1 = t_{prop1} + 10( t_{xmit1} ) = 1 ms + 10( \frac{10^3}{10^6} ) = 11ms.$$\\
+$$l_2 = t_{prop2}  + 10(t_{xmit2} ) = 2ms + 10( \frac{10^3}{5\cdot10^6} )= 7ms.$$\\
+$$total delay = 18 ms.$$
+\end{enumerate}
+\textbf{Part II, Solution:\\}
+\begin{enumerate}
+\item First we calculate the overall delays per packet in both links, without the queue delay.
+$$t_{l1} = 2ms + \frac{2.5\cdot10^3 b}{2Mbps} = 127ms.$$
+$$t_{l2} = 1ms + \frac{2.5\cdot10^3 b}{1Mbps} = 251ms.$$
+The queue time, would be the time it takes for a packet to full enter the second link  from the switch, equvalent to $L/R_{l2} = 250ms$. Now we can create a table, tracking the times of when each pack leaves the switch, counting in total time.
+\begin{center}
+	\begin{tabular}{ | l | l | l | } 
+	\hline
+	Packet & Packet arrives at S (ms) & Packet Leaves S (ms) \\ \hline
+	1 & 127 & 377 \\ \hline
+	2 & 254 & 504 \\ \hline
+	3 & 381 & 631 \\ \hline
+	4 & 508 & 758 \\ \hline
+	\end{tabular}
+\end{center}
+From here it is very simple to generate the graph, shown below. 
+\begin{figure}[h]
+\includegraphics[width=\textwidth, scale = 0.25]{AQ1_graph}
+\end{figure}
+
+\item From the above graph, it is 758 ms after the first packet in sent that the final packet leaves the the queue. So we only need to account for the total delay of the final link in order to obtain the total delay for the whole message. Thus $t_{total} = 758ms  + 251ms = 1009ms$ total delay time.
+\end{enumerate}
+
+\paragraph{Additional Question II\\}
+\begin{enumerate}[label = \alph*)]
+\item \$300 million. [ bloomberg.com ]
+\item The Hibernia Expresses is reported to be 5.2 milliseconds faster than the previous connection. [bloomberg.com]
+\item The prevous path length was reduced by 310 miles by very carefully planning a the shortest route from one seaboard to the other. [bloomberg.com]
+\item Video streaming, Voice chat, stock trading. [bloomberg.com]
+\end{enumerate}
+
 \end{document}
 This is never printed

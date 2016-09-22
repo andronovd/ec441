@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{datetime}
+%\usepackage{showframe}
+
+%custom variables
+\newdate{date}{23}{09}{2016}
+\newcommand{\hwNum}{1}
+\newcommand{\hwTitle}{EC441: Lab 1}
+
+
+%header
+\pagestyle{fancy}
+\lhead{Daniel Andronov}
+\chead{\thepage}
+\rhead{\hwTitle}
+\cfoot{\thepage}
+
+\fancyheadoffset[LO,RE]{1pt}
+\fancyheadoffset[RO,LE]{1pt}
+
+%titlepage
+\title{\hwTitle}
+\author{Daniel Andronov}
+\date{\displaydate{date}}
+
+%addition settings
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\begin{document}
+\maketitle
+\newpage
+
+
+\section{Introduction to Traceroute}
+\paragraph{Question 1\\}
+\textbf{Solution: }
+10 Hops
+
+\paragraph{Question 2\\}
+\textbf{Solution: }
+The traceroute seems to indicate that the packet traved through the "altas" and "leaseweb" ISP's. 
+
+\paragraph{Question 3\\}
+\textbf{Solution: }
+
+\paragraph{Question 4\\}
+\textbf{Solution: }
+traceroute www.ucsd.ed -N 10
+
+\paragraph{Question 5\\}
+\textbf{Solution: }
+
+\paragraph{Question 6\\}
+\textbf{Solution: }
+
+
+\section{Wireshark Experiments}
+\paragraph{Question 7\\}
+\textbf{Solution: }
+TCP, HTTP TLSv1.2
+
+\paragraph{Question 8}
+\textbf{Solution: }
+The GET packet was timestamped at 34.144110620 and the OK packet was timestamped at 34.149512754 sec, so the time in between the two packets was 0.005402134 sec or about 5.4 ms.
+
+\paragraph{Question 9\\}
+\textbf{Solution: }
+128.119.245.12
+
+\paragraph{Question 10\\}
+\textbf{Solution: }
+172.16.115.128
+
+\paragraph{Question 11\\}
+\textbf{Solution: }
+The IP addresses starting with 192.168.x.x and 172.16.x.x are two of three sets of IP adresses reserved for private netorks, with the last reserved address is 10.x.x.x. These three addresses ranges are called classes, with each having more addresses to support connected devices than the last. They are ordered as below. 
+\begin{center}
+	\begin{tabular}{ | l | l | l |}
+	\hline
+	Address Range & Class Type & Maximum Devices \\ \hline
+	192.168.x.x & A & 65,536 \\ \hline
+	172.16.x.x - 172.31.x.x & B & 1,048,576 \\ \hline
+	10.x.x.x & C & 16,777,216 \\ \hline
+	\end{tabular}
+\end{center}
+
+
+\end{document}
+This is never printed

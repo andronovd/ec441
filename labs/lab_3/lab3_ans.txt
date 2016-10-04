@@ -1,0 +1,27 @@
+3.1
+
+
+q1) HTTP 1.1, 172.16.160.130
+
+
+q2) 136.167.2.220
+
+
+q3) src: 54910, dst: 80
+
+
+q4) src: 80, dst: 54910
+
+
+q5) Apache, last mod: tues, 10/4/2016 17:17:01 GMT
+
+
+q6) 9 different messages, parallelization
+
+
+3.2
+
+q7) Uq8) src: 42422, dst: 53
+
+
+q9) src: 172.16.160.2 | local DNS: same as src

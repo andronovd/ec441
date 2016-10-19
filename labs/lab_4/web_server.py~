@@ -37,7 +37,7 @@ while True:
     print( "Connected" );
     try:
         message = connectionSocket.recv( size );
-        print( "message: ", message.split() );
+        #print( "message: ", message.split()[ 1 ] );
         filename = message.split()[1];
         filename = filename.replace( "/", "" );
         

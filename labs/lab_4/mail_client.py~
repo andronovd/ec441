@@ -44,8 +44,6 @@ recv3 = clientSocket.recv( size ).decode();
 print( recv3 );
 if( recv3[:3] == '550' ):
 	print("The addressee is unknown");
-	clientSocket.close();
-	sys.exit(1);
 
 #Send DATA command and print server response.
 dataCommand = 'DATA ' + msg + endmsg;

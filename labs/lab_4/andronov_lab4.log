@@ -1,0 +1,158 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.15)  21 OCT 2016 10:04
+entering extended mode
+**C:/Documents/School/current/ec441/labs/lab_4/andronov_lab4.tex
+(C:/Documents/School/current/ec441/labs/lab_4/andronov_lab4.tex
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
+\fancy@headwidth=\skip43
+\f@ncyO@elh=\skip44
+\f@ncyO@erh=\skip45
+\f@ncyO@olh=\skip46
+\f@ncyO@orh=\skip47
+\f@ncyO@elf=\skip48
+\f@ncyO@erf=\skip49
+\f@ncyO@olf=\skip50
+\f@ncyO@orf=\skip51
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\datetime\datetime.sty"
+Package: datetime 2015/03/20 v2.60 Date Time Package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count87
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fmtcount.sty"
+Package: fmtcount 2015/05/05 v3.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\keyval.tex"))
+\XKV@depth=\count88
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fcprefix.sty"
+Package: fcprefix 2012/09/28
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fcnumparser.sty"
+Package: fcnumparser 2012/09/28
+\fc@digit@counter=\count89
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen103
+)
+\c@padzeroesN=\count90
+\fc@tmpcatcode=\count91
+\@DT@modctr=\count92
+\@ordinalctr=\count93
+\@orgargctr=\count94
+\@strctr=\count95
+\@tmpstrctr=\count96
+\@DT@loopN=\count97
+\@DT@X=\count98
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-english.def"
+File: fc-english.def 2013/08/17
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\datetime\datetime-defaults.sty"
+Package: datetime-defaults 2013/09/10
+)
+\@day=\count99
+\@month=\count100
+\@year=\count101
+\c@HOUR=\count102
+\c@HOURXII=\count103
+\c@MINUTE=\count104
+\c@TOHOUR=\count105
+\c@TOMINUTE=\count106
+\c@SECOND=\count107
+\currenthour=\count108
+\currentminute=\count109
+\currentsecond=\count110
+Package datetime Info: No datetime.cfg file found, using default settings on in
+put line 308.
+\@dtctr=\count111
+\dayofyear=\count112
+\dayofweek=\count113
+LaTeX Info: Redefining \today on input line 736.
+\dt@a=\toks17
+\dt@b=\toks18
+)
+
+Package Fancyhdr Warning: \fancyheadoffset's `E' option without twoside option 
+is useless on input line 22.
+
+
+Package Fancyhdr Warning: \fancyheadoffset's `E' option without twoside option 
+is useless on input line 23.
+
+(C:/Documents/School/current/ec441/labs/lab_4\andronov_lab4.aux)
+\openout1 = `andronov_lab4.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 39.
+
+! TeX capacity exceeded, sorry [input stack size=5000].
+\name ->\name 
+              {}
+l.39 \maketitle
+               
+If you really absolutely need more capacity,
+you can ask a wizard to enlarge me.
+
+ 
+Here is how much of TeX's memory you used:
+ 1632 strings out of 493334
+ 21936 string characters out of 3136678
+ 90803 words of memory out of 3000000
+ 5195 multiletter control sequences out of 15000+200000
+ 5150 words of font info for 19 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 5000i,4n,43p,1041b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

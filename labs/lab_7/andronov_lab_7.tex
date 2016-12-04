@@ -1,0 +1,180 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{datetime}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\graphicspath{ {images/} }
+%\usepackage{showframe}
+
+%custom variables
+\newdate{date}{2}{12}{2016}
+\newcommand{\hwNum}{7}
+
+
+%header
+\pagestyle{fancy}
+\lhead{Daniel Andronov}
+\chead{\thepage}
+\rhead{EC441: Lab \hwNum{}}
+\cfoot{\thepage}
+
+\fancyheadoffset[LO,RE]{1pt}
+\fancyheadoffset[RO,LE]{1pt}
+
+%titlepage
+\title{EC441: Lab \hwNum{}}
+\author{Daniel Andronov}
+\date{\displaydate{date}}
+
+%offset sections
+%offset the sections by 6
+\setcounter{section}{7}
+\setcounter{subsection}{-1}
+
+%addition settings
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\begin{document}
+\maketitle
+\newpage
+
+\subsection{Prelab}
+\paragraph{Question 5.3}
+\begin{tabular} {  l | l | l | l | l | l | l | l }
+	Step & N 			& t 		& u 		& v 		& w 		& y 		& z \\ \hline
+	0      & x 			& -		& -		& 3,x 		& 6,x 		& 6,x 		& 8,x \\ 
+	1      & x,w 			& - 		& 9,w 		& 3,x 		& 6,x 		& 6,x 		& 8,x \\ 
+	2      & x,w,u 		& 11,u     	& 9,w 		& 3,x 		& 6,x 		& 6,x 		& 8,x \\ 
+	3      & x,w,u,t 		& 7,v	     	& 9,w		& 3,x 		& 6,x 		& 6,x 		& 8,x \\ 
+	4      & x,w,u,t,v 		& 7,v 	     	& 9,w		& 3,x 		& 6,x 		& 6,x 		& 8,x \\ 
+	5      & x,w,u,t,v,y 		& 7,v        	& 9,w 		& 3,x 		& 6,x 		& 6,x 		& 8,x \\ 
+	6      & x,w,u,t,x,y,z 	& 7,v        	& 9,w 		& 3,x 		& 6,x 		& 6,x 		& 8,x \\ 
+\end{tabular}
+
+\paragraph{Question 5.5}
+\begin{tabular}{ l | l | l }
+	Dest	&Cost		&Next Hop \\ \hline
+	u 	&6		&x \\
+	v	&5		&x \\
+	x 	&2 		&x \\ 
+	y 	&2 		&x \\
+\end{tabular}
+
+\paragraph{Question 5.7}
+\begin{enumerate}[label={Part \alph*)},leftmargin=*,align=left]
+	\item
+		\begin{tabular}{ l | l | l }
+			Dest	&Cost 	&Next Hop \\ \hline
+			u 	&7		&w \\
+			w	&2 		&w \\
+			y 	&2		&w \\
+		\end{tabular}
+	\item The link between x \& w goes down
+	\item The cost of the link between x \& y goes to 6.
+\end{enumerate}
+
+\paragraph{Question 6.8}
+\begin{enumerate}[label={Part \alph*)},leftmargin=*,align=left]
+	\item Utility, $U = Np(1-p)^{N-1}$. To find the optimal $p$, find the derivative of $U$ with respect to $p$ and solve for $p$ when it is equal to 0. So,
+		\begin{align*}
+			\frac{dU}{dp} & = N(1 - p )^{N-1} - N(N-1)p(1-p)^{N-2} \\
+		\end{align*}
+		Then, when $\frac{dU}{dp} = 0$
+		\begin{align*}
+			N(1-p)^{N-1} & = N(N-1)p(1 - p )^{N-2} \\
+			1 - p  & = (N-1)p \\ 
+			1 & = Np \\
+			p & = 1/N \\
+		\end{align*}
+		Thus, the optimal value for $p$ is $\frac{1}{N}$. 
+	\item
+		\begin{align*}
+			U( 1/N ) & = (1 - \frac{1}{N} )^{N - 1} \\
+		\end{align*}
+		Now, taking the limit as $N \rightarrow \infty$,
+		\begin{align*}
+			\lim_{N\to\infty}(1 - \frac{1}{N} )^{N - 1} & = \frac{1}{e} \\
+		\end{align*}
+		Using the fact that $\lim_{N\to\infty}(1 - \frac{1}{N})^{N} = 1/e$.
+\end{enumerate}
+
+\paragraph{Question 6.10}
+\begin{enumerate}[label={Part \alph*)},leftmargin=*,align=left]
+	\item Let $P[ S ]$ represent the probability that a given time slot is successful. Then, 
+		\begin{align*}
+			P[S] & = P[ \text{only A or B is successful}] \\
+			&  =  (1 - p_A)p_A + (1 - p_A)p_A \\
+			& = p_A - p_Bp_A + p_B - p_Ap_B \\ 
+			& =p_A + p_B - 2p_Ap_B. \\
+		\end{align*}
+	\item Let $P[A]$ be the probability that for a given time slot, A is successfully sent. Thus, $P[A] = (1 - p_B)p_A$ and $P[B] = (1 - p_A)p_B$. Then we can show that the ratio of $P[A]$ to $P[B]$ is less than 2. 
+		\begin{align*}
+			\frac{P[A]}{P[B]} & = \frac{(1 - p_B)p_A}{(1-p_A)p_B}, let p_A = 2p_B \\
+			& = \frac{1 - p_B)2p_B}{(1-2p_B)p_B}  \\
+			& = 2\frac{1 - p_B}{1 - 2p_B}. \\
+		\end{align*}
+		$2\frac{1 - p_B}{1 - 2p_B}  < 2$ because $\frac{1 - p_B}{1 - 2p_B}$ is less than one.\\ \\
+		If $\frac{P[A]}{P[B]} = 2$, then,
+		\begin{align*}
+			2 & = \frac{ (1 - p_B)p_A}{ (1 - p_A)p_B } \\
+			2(1 - p_A)p_B & = p_A - p_Ap_B \\
+			2p_B & = p_A + p_Ap_B \\ 
+			0 & = p_A + p_Ap_B - 2p_B \\ 
+			0 & = 1 + p_B - 2\frac{p_A}{p_B} \\
+			\frac{p_A}{p_B} & = \frac{1 + p_B}{2} \\
+		\end{align*}
+		Thus $p_A$ and $p_B$ should be chosen so that their ratio is $\frac{1 + p_B}{2}$.
+\end{enumerate}
+
+\paragraph{Additional Question 1}
+\begin{enumerate}[label={Part \alph*)},leftmargin=*,align=left]
+	\item If the link from B to C fails, B will send an update to A. A will get an update from B and see that it is an update from the next hop, and send an update back to B, with a cost of 2. B will get this update and and send an update to A about its increase cost. This update will cause A to update andd repeat the process. 
+	\item Probability is 1.
+	\item Probability is 1.
+\end{enumerate}
+
+\paragraph{Additional Question 2}
+At $t_1$ C will send out a triggerd update to A and B notifiying them about the topology change, both with sequence numbers 1. A will then send a packet to B and vice versa, both packets having sequence numbers 1. Also at $t_1$, D will send an update to E, telling about the link failure, with sequence number of 1. When the link is restored at $t_2$, C and D will sent out lsp's to their neighbors, all with a sequence number of 1, and the same sequence of events will occur as before.
+
+\subsection{Static Routing}
+\paragraph{Question 1}
+The route does not change because static routing tables do not change. 
+\paragraph{Question 2}
+The route does not change becuase static routing tables do not change. 
+\subsection{Distance Vector Routing}
+\paragraph{Question 3}
+Row 0 in the table has the following elements: 0, 1, 1, 1, 6, 6, 6. This lists the next node to hop to in order to reach node j, where j is the destination node.
+\paragraph{Question 4}
+At $t = 1.0s$, the link between Nodes 4 \& 5 fails and at $t = 3.0s$, it is restored. The failure of this link causes both Node 4 \& 5 to send updates about their neighbors and costs to all other nodes. Once the update reaches Node 0, it stops sending packets to Node 6 and instead delivers packets to Node 4 by way of Nodes 1,2, \& 3. 
+\paragraph{Question 5}
+The percent overhead is $24.18\%$.
+\paragraph{Question 6}
+It takes about 0.05 seconds for routing tables to converge. 18 routing control packets are generated. The following table shows the global routing table after the link between Node 4 \& 5 goes down. Element $ij$ refers to source node $i$ and destination node $j$, where each elemnt as the format next hop, distance to destination. \\
+\begin{center}
+\begin{tabular}{ *{8}{ l |} }
+		& 0 	& 1	& 2 	& 3 	& 4 	& 5 	& 6   \\ \hline
+	0 	&- 	&1,1	&1,2	&1,3	&1,4	&6,2	&6,1 \\ \hline
+	1 	&0,1	&- 	&2,1 	&2,2	&2,3 	&0,2 	&0,3 \\ \hline
+	2 	&1,2	&1,1 	&- 	&3,1 	&3,4 	&1,3 	&1,4 \\ \hline
+	3 	&2,3	&2,2 	&2,1 	&- 	&4,1 	&2,5 	&2,4 \\ \hline
+	4 	&3,4 	&3,3 	&3,2 	&3,1 	&- 	&3,6 	&3,5 \\ \hline
+	5 	&6,2	&6,3 	&6,4 	&6,5 	&6,6 	&- 	&6,1 \\ \hline
+	6	&0,1	&0,2 	&0,2 	&0,3 	&0,4 	&5,1 	&-     \\ \hline
+\end{tabular}
+\end{center}
+\subsection{Link State Routing}
+\paragraph{Question 7}
+Within in ther first 0.5 seconds, nodes are sending updates about ther nieghbor so that each nodes gains information about the topology of the network. At $t = 1.0s$, the link betwe Nodes 4 and 5 fails and at $t = 3.0s$, it recovers. The route changes because the failure of the link forces Node 4 \& 5 to update their tables and send out ann update to all other nodes. 
+\paragraph{Question 8}
+The percent overhead is $36.518\%$
+\paragraph{Question 9}
+It takes 0.06 seconds for the rounting tables to converge. 24 routing control packets are generated. Link State Routing take time to initialize and longer time to recover from link failure \& generates more packets.
+\end{document}
+This is never printed

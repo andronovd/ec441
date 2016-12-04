@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{datetime}
+\usepackage{enumitem}
+%\usepackage{showframe}
+
+%custom variables
+\newdate{date}{8}{11}{2016}
+\newcommand{\hwNum}{5}
+
+
+%header
+\pagestyle{fancy}
+\lhead{Daniel Andronov}
+\chead{\thepage}
+\rhead{EC441: Lab \hwNum{}}
+\cfoot{\thepage}
+
+\fancyheadoffset[LO,RE]{1pt}
+\fancyheadoffset[RO,LE]{1pt}
+
+%titlepage
+\title{EC441: Lab \hwNum{}}
+\author{Daniel Andronov}
+\date{\displaydate{date}}
+
+%addition settings
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\begin{document}
+\maketitle
+\newpage
+
+\begin{enumerate}[label=\textbf{Question\arabic*)},leftmargin=*,align=left]
+	\item \textbf{ \underline{ etho0 }}: ip: 10.0.0.01, \textbf{\underline{lo}}: ip: 127.0.01
+	\item Average RTT was 20.583 ms.
+	\item The size of the downlload was 177,669 Bytes and it took 1.0 seconds to download it
+	\item 1st packet from the client to the server had only the SYN flag set
+	\item 1st packet from the server to the client had both the SYN and ACK flags set
+	\item The link goes from slow-start to congestion mode, meaning that there is a packet loss in between the transition. Thus the server is waiting on a timeout and stops transmitting.
+	\item In the first data packet the window was set to 57 so the initial congestion window should be around 57 Bytes.
+	\item The window size rises nearly linearly, so the link is in congestion mode
+	\item The download took 6.8 seconds
+	\item  The link goes into congestion mode because there is so much traffic but since the buffer is so large, it is dispaportianlly filled with video data packets and not html data packets. Thus each html data packet has to wait a long time until the buffer is filled in order to be send to the application layer.
+	\item Because the buffer size is reduced, the buffer need to wait for less packets in order to be filled and send to the application layer. Thus each wget packet that gets stuck in the buffer has to wait for less iperf packets before being delieved to the application layer. 
+\end{enumerate}
+
+\end{document}
